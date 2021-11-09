@@ -10,4 +10,4 @@ After succesfully starting of spring application please install Postman tool to 
 
 1. http://localhost:8443/accounts/saving
 2. http://localhost:8443/accounts/current?custId=101&initialCredit=10000
-3.http://localhost:8443/accounts/customerInfo?custId=101 
+3. http://localhost:8443/accounts/customerInfo?custId=101 
