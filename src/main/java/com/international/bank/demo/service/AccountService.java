@@ -10,5 +10,5 @@ public interface AccountService {
 
     Optional<Client> searchAndCreateCurrentAccount(int custId , double initialCredit);
 
-    Optional<Client> getCustomerInformationOfNewAccount();
+    Optional<Client> getCustomerInformationOfNewAccount(int custId);
 }
