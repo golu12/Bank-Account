@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/
+EXPOSE 8085
+ENTRYPOINT ["java","-jar" ,""]
