@@ -30,7 +30,7 @@ public class Controller {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
-    @GetMapping("accounts/current")
+    @GetMapping("accounts/customerInfo")
     public ResponseEntity getCustomerDetails(@RequestParam int custId){
         Optional<Client> response = accountService.getCustomerInformationOfNewAccount(custId);
         return new ResponseEntity(response, HttpStatus.OK);
