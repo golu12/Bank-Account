@@ -69,9 +69,9 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Optional<Client> getCustomerInformationOfNewAccount() {
+    public Optional<Client> getCustomerInformationOfNewAccount(int custId) {
         if(clientRepository != null){
-            Client result = clientRepository.getCustomerDetails();
+            Client result = clientRepository.getCustomerDetails(custId);
             if(result != null){
                 return Optional.of(result);
             }
