@@ -31,8 +31,8 @@ public class Controller {
     }
 
     @GetMapping("accounts/current")
-    public ResponseEntity getCustomerDetails(){
-        Optional<Client> response = accountService.getCustomerInformationOfNewAccount();
+    public ResponseEntity getCustomerDetails(@RequestParam int custId){
+        Optional<Client> response = accountService.getCustomerInformationOfNewAccount(custId);
         return new ResponseEntity(response, HttpStatus.OK);
     }
 }
