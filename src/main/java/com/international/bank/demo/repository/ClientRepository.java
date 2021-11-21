@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
-    @Query(value = "select  * from ACCOUNT INNER JOIN CLIENT  where ACCOUNT.CUSTOMER_ID=: custId" , nativeQuery = true)
+    @Query(value = "select  * from ACCOUNT INNER JOIN CLIENT  where ACCOUNT.CUSTOMER_ID= :custId" , nativeQuery = true)
     List<Client> getCustomerRecord(@Param("custId") int custId);
 
     @Query(value = "select * from ACCOUNT INNER JOIN CLIENT where ACCOUNT.ACCOUNT_TYPE= 'current' and ACCOUNT.CUSTOMER_ID= :custId", nativeQuery = true)
