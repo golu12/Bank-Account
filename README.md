@@ -2,9 +2,18 @@
 
 Download the project in your IDE.
 
+configure Java 8 in your IDE.
+
 Run mvn install to resolve the dependency of the POM.xml
 
 Run the SpringBatchApplication.java class of the project.
+
+Test Cases :- 
+
+class name : src/test/java/com/international/bank/demo/TestScenarioForBankAccount.java 
+
+case 1st : 
+
 
 After succesfully starting of spring application please install Postman tool to execute the endpoints .
 
