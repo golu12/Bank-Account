@@ -21,7 +21,11 @@ public class AccountServiceImpl implements AccountService {
     private static final Logger LOG = LoggerFactory.getLogger(AccountServiceImpl.class);
 
 
-
+    /**
+     * Below Method Will Create First Saving Account For Creation Of CurrentAccount.
+     * @param client
+     * @return 
+     */
     @Override
     public Optional<Client> addSavingsAccount(Client client) {
       try {
@@ -36,7 +40,14 @@ public class AccountServiceImpl implements AccountService {
 		}
         return Optional.empty();
     }
-
+    
+    /**
+     * Below Method Will Search If Saving Account Exists, If Yes Then Create New Account Also If InitialCreadit is
+     * Non Zero Then Transfer The Amount.
+     * @param custId
+     * @param initialCredit
+     * @return
+     */
     @Override
     public Optional<Client> searchAndCreateCurrentAccount(int custId, double initialCredit) {
         Client client = null;
@@ -73,6 +84,11 @@ public class AccountServiceImpl implements AccountService {
         return Optional.empty();
     }
 
+    /**
+     * Method Will Result The CustomerInfo Of Current Account Which is Created.
+     * @param custId
+     * @return
+     */
     @Override
     public Optional<Client> getCustomerInformationOfNewAccount(int custId) {
         
