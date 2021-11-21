@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.international.bank.demo.Exception.ResourceNotFoundException;
 
 import java.util.Collections;
 import java.util.List;
@@ -23,12 +24,16 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Client> addSavingsAccount(Client client) {
-        if(clientRepository != null && client != null){
-            Client result = clientRepository.save(client);
-            if(result != null){
-                return Optional.of(result);
+      try {
+    		if(clientRepository != null && client != null){
+                Client result = clientRepository.save(client);
+                if(result != null){
+                    return Optional.of(result);
+                }
             }
-        }
+    	}catch (ResourceNotFoundException e) {
+			LOG.error("Error while creating saving account", e.getAccountObject());
+		}
         return Optional.empty();
     }
 
@@ -62,7 +67,7 @@ public class AccountServiceImpl implements AccountService {
             return addSavingsAccount(client);
         }
 
-        }catch(Exception e){
+        }catch(ResourceNotFoundException e){
          LOG.error("Error while creating current account", e.getMessage());
         }
         return Optional.empty();
@@ -70,12 +75,17 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Client> getCustomerInformationOfNewAccount(int custId) {
-        if(clientRepository != null){
-            Client result = clientRepository.getCustomerDetails(custId);
-            if(result != null){
-                return Optional.of(result);
+        
+      	try {
+    		if(clientRepository != null){
+                Client result = clientRepository.getCustomerDetails(custId);
+                if(result != null){
+                    return Optional.of(result);
+                }
             }
-        }
+    	}catch(ResourceNotFoundException e) {
+    		LOG.error("Error while creating current account", e.getMessage());
+    	}
         return Optional.empty();
     }
 }
