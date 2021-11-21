@@ -53,18 +53,18 @@ public class AccountServiceImpl implements AccountService {
         Client client = null;
         Account account = null;
         try{
-        List<Client> value = clientRepository.getCustomerRecord(custId);
-        if(!value.get(0).getAccounts().get(0).getAccountNumber().isEmpty()){
+        List<Client> existingAccountDetails = clientRepository.getCustomerRecord(custId);
+        if(!existingAccountDetails.get(0).getAccounts().get(0).getAccountNumber().isEmpty()){
             client = new Client();
             account = new Account();
-            client.setId(value.get(0).getId());
-            client.setCustomerId(value.get(0).getCustomerId());
-            client.setFirstName(value.get(0).getFirstName());
-            client.setLastName(value.get(0).getLastName());
-            client.setAddress(value.get(0).getAddress());
-            client.setBranch(value.get(0).getBranch());
-            client.setEmailId(value.get(0).getEmailId());
-            client.setIfscCode(value.get(0).getIfscCode());
+            client.setId(existingAccountDetails.get(0).getId());
+            client.setCustomerId(existingAccountDetails.get(0).getCustomerId());
+            client.setFirstName(existingAccountDetails.get(0).getFirstName());
+            client.setLastName(existingAccountDetails.get(0).getLastName());
+            client.setAddress(existingAccountDetails.get(0).getAddress());
+            client.setBranch(existingAccountDetails.get(0).getBranch());
+            client.setEmailId(existingAccountDetails.get(0).getEmailId());
+            client.setIfscCode(existingAccountDetails.get(0).getIfscCode());
             account.setAccountNumber("CAP089039458");
             account.setAccountType("current");
             if(initialCredit > 0){
@@ -72,7 +72,7 @@ public class AccountServiceImpl implements AccountService {
             }else {
                 account.setBalance(0);
             }
-            account.setCustomerId(value.get(0).getAccounts().get(0).getCustomerId());
+            account.setCustomerId(existingAccountDetails.get(0).getAccounts().get(0).getCustomerId());
             account.setPid(904);
             client.setAccounts(Collections.singletonList(account));
             return addSavingsAccount(client);
@@ -100,7 +100,7 @@ public class AccountServiceImpl implements AccountService {
                 }
             }
     	}catch(ResourceNotFoundException e) {
-    		LOG.error("Error while creating current account", e.getMessage());
+    		LOG.error("Error while fetching account details", e.getMessage());
     	}
         return Optional.empty();
     }
