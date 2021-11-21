@@ -37,8 +37,8 @@ public class Controller {
     * @return 
     */
     @GetMapping(path = "/accounts/current", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<TransactionResponse> addCurrentAccount(@RequestParam int custId , @RequestParam double intialCredit){
-        Optional<Client> response = accountService.searchAndCreateCurrentAccount(custId, intialCredit);
+    public ResponseEntity<TransactionResponse> addCurrentAccount(@RequestParam int custId , @RequestParam double initialCredit){
+        Optional<Client> response = accountService.searchAndCreateCurrentAccount(custId, initialCredit);
         return new ResponseEntity(response, HttpStatus.OK);
     }
     
