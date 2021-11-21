@@ -24,7 +24,7 @@ public class Controller {
     * @return 
     */
     @PostMapping("/accounts/saving")
-    public ResponseEntity createAccount(@RequestBody CustomerRequest customerRequest){
+    public ResponseEntity createAccount(@Valid @RequestBody CustomerRequest customerRequest){
         Optional<Client> response = accountService.addSavingsAccount(customerRequest.getClient());
         return new ResponseEntity(response, HttpStatus.OK);
     }
