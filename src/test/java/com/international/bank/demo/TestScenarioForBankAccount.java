@@ -22,7 +22,7 @@ import org.junit.Assert;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootApplication.class , webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestScenarioForAccounts {
+public class TestScenarioForBankAccount {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
