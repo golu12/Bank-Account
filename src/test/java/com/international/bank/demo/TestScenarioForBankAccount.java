@@ -18,7 +18,7 @@ import com.international.bank.demo.model.Account;
 import com.international.bank.demo.model.Client;
 import com.international.bank.demo.model.CustomerRequest;
 
-import junit.Assert;
+import org.junit.Assert;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootApplication.class , webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -44,7 +44,7 @@ public class TestScenarioForAccounts {
 	 */
 	@Test
 	public void testCreateAccount() {
-		CustomerRequest customerRequest = getCustomerRequest();
+	CustomerRequest customerRequest = getCustomerRequest();
         ResponseEntity<CustomerRequest> postResponse = restTemplate.postForEntity(getRootUrl() + "/accounts/saving" , customerRequest, CustomerRequest.class);
         Assert.assertNotNull(postResponse);
         Assert.assertNotNull(postResponse.getBody());
@@ -56,9 +56,9 @@ public class TestScenarioForAccounts {
 	 */
 	@Test
 	public void testAddCurrentAccount() {
-		testCreateAccount();
-		Client searchAndCreateAccount = restTemplate.getForObject(getRootUrl() + "/accounts/current?custId=101&initialCredit=1000", Client.class);
-	    Assert.assertNotNull(searchAndCreateAccount);
+	testCreateAccount();
+	Client searchAndCreateAccount = restTemplate.getForObject(getRootUrl() + "/accounts/current?custId=101&initialCredit=1000", Client.class);
+	Assert.assertNotNull(searchAndCreateAccount);
 	    
 	}
 	
@@ -67,24 +67,25 @@ public class TestScenarioForAccounts {
 	 */
 	@Test
 	public void testGetCustomerInfoForCurrentAccount() {
-		testAddCurrentAccount();
-		Client client = restTemplate.getForObject(getRootUrl() + "/accounts/customerInfo?custId=101", Client.class);
-		Assert.assertNotNull(client);
-		Assert.assertNotNull(client.getAccounts());
+	testAddCurrentAccount();
+	Client client = restTemplate.getForObject(getRootUrl() + "/accounts/customerInfo?custId=101", Client.class);
+	Assert.assertNotNull(client);
+	Assert.assertNotNull(client.getAccounts());
 	}
+	
 	@NotNull
 	private CustomerRequest getCustomerRequest() {
-		CustomerRequest customerRequest = new CustomerRequest();
-		Client client = new Client();
-		Account account = new Account();
-		client.setId(1);
-        client.setCustomerId();
-        client.setFirstName();
-        client.setLastName();
-        client.setAddress();
-        client.setBranch();
-        client.setEmailId();
-        client.setIfscCode();
+	CustomerRequest customerRequest = new CustomerRequest();
+	Client client = new Client();
+	Account account = new Account();
+	client.setId(1);
+        client.setCustomerId(101);
+        client.setFirstName("shivam");
+        client.setLastName("Kesherwani");
+        client.setAddress("Amstelveen");
+        client.setBranch("Amsterdam");
+        client.setEmailId("shivam.kesherwani@gmail.com");
+        client.setIfscCode("ICSD00001");
         account.setAccountNumber("CAP089039458");
         account.setAccountType("saving");
         
@@ -93,6 +94,7 @@ public class TestScenarioForAccounts {
         account.setPid(903);
         client.setAccounts(Collections.singletonList(account));
         customerRequest.setClient(client);
-		return customerRequest;
+	return customerRequest;
 	}
 	
+}
