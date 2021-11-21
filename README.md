@@ -12,7 +12,22 @@ Test Cases :-
 
 class name : src/test/java/com/international/bank/demo/TestScenarioForBankAccount.java 
 
-case 1st : 
+
+Case 1st : Below Test Scenario Will Create First Saving Account For Creation Of Current Account.
+
+testCreateAccount()
+
+Case 2nd : Below Test Scenario Will Search If Saving Account Exists, If Yes Then Create New Account Also Transfer Amount If
+	       InitialCreadit is Non Zero.
+           
+testAddCurrentAccount()
+
+Case 3rd : Below Test Scenario Will Result Customer Info of Current Account Which is Recently Created.
+
+testGetCustomerInfoForCurrentAccount()
+
+--------------------------------------------------------------------------------------------------------
+- For testing application business login via post please follow below.
 
 
 After succesfully starting of spring application please install Postman tool to execute the endpoints .
@@ -50,5 +65,5 @@ After succesfully starting of spring application please install Postman tool to 
 
 3. Get http://localhost:8443/accounts/customerInfo?custId=101 
 
-
-- Added DockerFile for creation of docker image as part of ci/cd
+-----------------------------------------------------------------
+- Added DockerFile for creation of docker image as part of CI/CD
