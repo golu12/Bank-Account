@@ -6,14 +6,16 @@ configure Java 8 in your IDE.
 
 Run mvn install to resolve the dependency of the POM.xml
 
-Run the SpringBatchApplication.java class of the project.
+Run the SpringBootApplication.java class of the project.
+
 
 Test Cases :- 
+----------------------------------------------------------------------------------------
 
 class name : src/test/java/com/international/bank/demo/TestScenarioForBankAccount.java 
 
 
-Case 1st : Below Test Scenario Will Create First Saving Account For Creation Of Current Account.
+Case 1st : Below Test Scenario Will Create First Saving Account So that new rest endpoint can create current account.
 
 testCreateAccount()
 
@@ -26,8 +28,9 @@ Case 3rd : Below Test Scenario Will Result Customer Info of Current Account Whic
 
 testGetCustomerInfoForCurrentAccount()
 
---------------------------------------------------------------------------------------------------------
-- For testing application business login via post please follow below.
+
+For testing application business login via post please follow below.
+--------------------------------------------------------------------------------
 
 
 After succesfully starting of spring application please install Postman tool to execute the endpoints .
@@ -65,5 +68,7 @@ After succesfully starting of spring application please install Postman tool to 
 
 3. Get http://localhost:8443/accounts/customerInfo?custId=101 
 
------------------------------------------------------------------
-- Added DockerFile for creation of docker image as part of CI/CD
+
+Added DockerFile for creation of docker image as part of CI/CD
+---------------------------------------------------------------
+DockerFile
