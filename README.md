@@ -29,8 +29,8 @@ Case 3rd : Below Test Scenario Will Result Customer Info of Current Account Whic
 	   testGetCustomerInfoForCurrentAccount()
 
 
-For testing application via postman please follow below json request
---------------------------------------------------------------------------------
+For testing application via postman please follow below json request and In memory DB details
+---------------------------------------------------------------------------------------------
 
 
 After succesfully starting of spring application please install Postman tool to execute the endpoints .
@@ -58,6 +58,12 @@ After succesfully starting of spring application please install Postman tool to 
     ]
 }
 
+To check if the first account is created please login below
+  http://localhost:8443/h2-console/login.do
+   
+  instuction for login: 
+  1. user id is : sa
+  2. passwrod (please leave blank)
 
 - Create new account based on existing account.
 
