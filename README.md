@@ -29,7 +29,7 @@ Case 3rd : Below Test Scenario Will Result Customer Info of Current Account Whic
 testGetCustomerInfoForCurrentAccount()
 
 
-For testing application business login via post please follow below.
+For testing application via postman please follow below json request
 --------------------------------------------------------------------------------
 
 
