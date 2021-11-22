@@ -17,16 +17,16 @@ class name : src/test/java/com/international/bank/demo/TestScenarioForBankAccoun
 
 Case 1st : Below Test Scenario Will Create First Saving Account So that new rest endpoint can create current account.
 
-testCreateAccount()
+	   testCreateAccount()
 
 Case 2nd : Below Test Scenario Will Search If Saving Account Exists, If Yes Then Create New Account Also Transfer Amount If
-	       InitialCreadit is Non Zero.
+	   InitialCreadit is Non Zero.
            
-testAddCurrentAccount()
+	   testAddCurrentAccount()
 
 Case 3rd : Below Test Scenario Will Result Customer Info of Current Account Which is Recently Created.
 
-testGetCustomerInfoForCurrentAccount()
+	   testGetCustomerInfoForCurrentAccount()
 
 
 For testing application via postman please follow below json request
