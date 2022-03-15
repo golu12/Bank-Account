@@ -43,7 +43,7 @@ After succesfully starting of spring application please install Postman tool to 
     "id":"1",
     "customerId":"101",
     "firstName":"shivam",
-    "lastName";"kesherwani",
+    "lastName":"kesherwani",
     "emailId":"shivam.kesherwani@",
     "address":"amsterdam",
     "branch":"amsterdam",
@@ -56,6 +56,7 @@ After succesfully starting of spring application please install Postman tool to 
     "balance":"193883"
     }
     ]
+}
 }
 
 	To check if the first account is created please login below
