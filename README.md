@@ -44,7 +44,7 @@ After succesfully starting of spring application please install Postman tool to 
     "customerId":"101",
     "firstName":"shivam",
     "lastName":"kesherwani",
-    "emailId":"shivam.kesherwani@",
+    "emailId":"shivam.kesherwani@gmail.com",
     "address":"amsterdam",
     "branch":"amsterdam",
     "ifscCode":"ICS667483",
